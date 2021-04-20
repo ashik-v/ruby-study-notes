@@ -1,5 +1,6 @@
 # Head First Ruby
 # Page 11
+# gets, chomp, case statement, rand
 
 puts "Enter name: "
 name = gets.chomp
