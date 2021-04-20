@@ -1,2 +1,1 @@
-# ruby
-my ruby endeavours
+# ruby-study-notes
