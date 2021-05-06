@@ -7,19 +7,18 @@ name = gets.chomp
 
 puts "Welcome, #{name}!"
 
-target = rand(100) + 1
+target = rand(1..100)
 
 number_of_guesses = 0
 
 while number_of_guesses < 10
   puts "Enter guess: "
   guess = gets.chomp.to_i
-  case
-  when guess < target
+  if guess < target
     puts "Oops. Your guess was LOW."
-  when guess > target
+  elsif guess > target
     puts "Oops. Your guess was HIGH."
-  when guess == target
+  elsif guess == target
     puts "Good job, #{name}! You guessed my number in #{number_of_guesses} guesses!"
     exit
   end

@@ -1,5 +1,5 @@
 def accelerate
-  puts "Stepping on gas" , "Speeding Up"
+  puts "Stepping on gas", "Speeding Up"
 end
 
 def sound_horn
