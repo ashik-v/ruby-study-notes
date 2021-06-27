@@ -1,6 +1,6 @@
-a = %w{The Quick Brown Fox Jumps}
+a = %w[The Quick Brown Fox Jumps]
 
-p a.map { |element| element + "!"}
+p a.map { |element| "#{element}!" }
 
 puts "x" * 80
 
@@ -10,6 +10,7 @@ class Array
     i = 0
     loop do
       break if i >= size
+
       b << block.call(self[i])
       i += 1
     end
@@ -17,4 +18,4 @@ class Array
   end
 end
 
-p a.my_map { |element| element + "!"}
+p a.my_map { |element| "#{element}!" }
