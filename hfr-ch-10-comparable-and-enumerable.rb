@@ -55,5 +55,6 @@ end
 #enables you to work on the object as opposed to splitter.string
 
 puts splitter.first
+puts splitter.string.first
 puts splitter.count
 puts splitter.map { |word| word + " foo" }
