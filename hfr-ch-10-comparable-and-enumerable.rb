@@ -13,16 +13,16 @@ class Steak
   #def >(other)
   #  GRADE_SCORES[grade] > GRADE_SCORES[other.grade]
   #end
-  #jsut define a spaceship method as below and mixin the comparable module
+  #just define a spaceship method as below and mixin the comparable module
 
   def <=>(other)
     case grade
       when GRADE_SCORES[grade] < GRADE_SCORES[other.grade]
         return -1
-      when GRADE_SCORES[grade] > GRADE_SCORES[other.grade]
-        return 1
-      else
+      when GRADE_SCORES[grade] == GRADE_SCORES[other.grade]
         return 0
+      else
+        return 1
     end
   end
 end
@@ -32,5 +32,28 @@ first_steak.grade = "Prime"
 second_steak = Steak.new
 second_steak.grade = "Choice"
 
+p first_steak > second_steak
 
-puts "I'll take #{first_steak.inspect}" if first_steak < second_steak
+#enumerable module as a mixin
+#just define an each method
+class WordSplitter
+  include Enumerable
+
+  attr_accessor :string
+
+  def each
+    string.split(" ").each { |word| yield word }
+  end
+end
+
+splitter = WordSplitter.new
+splitter.string = "one two three four"
+
+splitter.each do |word|
+  puts word
+end
+#enables you to work on the object as opposed to splitter.string
+
+puts splitter.first
+puts splitter.count
+puts splitter.map { |word| word + " foo" }
