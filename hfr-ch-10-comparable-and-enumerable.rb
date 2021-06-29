@@ -37,9 +37,8 @@ p first_steak > second_steak
 #enumerable module as a mixin
 #just define an each method
 class WordSplitter
-  include Enumerable
-
   attr_accessor :string
+  include Enumerable
 
   def each
     string.split(" ").each { |word| yield word }
