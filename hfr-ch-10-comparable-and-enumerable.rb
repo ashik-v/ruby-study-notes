@@ -52,9 +52,9 @@ splitter.string = "one two three four"
 splitter.each do |word|
   puts word
 end
-#enables you to work on the object as opposed to splitter.string
+#enables you to work on the object as opposed to splitter.string.split(" ")
 
 puts splitter.first
-puts splitter.string.first
+puts splitter.string.split(" ").first
 puts splitter.count
 puts splitter.map { |word| word + " foo" }
