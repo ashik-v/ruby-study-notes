@@ -1,0 +1,6 @@
+---
+1: !ruby/object:Movie
+  title: foo
+  director: bar
+  year: '1998'
+  id: 1
