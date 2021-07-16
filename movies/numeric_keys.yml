@@ -1,0 +1,7 @@
+---
+1: !ruby/object:Movie
+  title: foo
+  rating: '2'
+2: !ruby/object:Movie
+  title: bar
+  rating: 3

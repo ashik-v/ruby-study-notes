@@ -1,25 +1,25 @@
 require 'yaml/store'
+require_relative 'movie'
 
 class MovieStore
   attr_reader :store
 
-  def initialize(filename)
-    @store = YAML::Store.new(filename)
+  def initialize
+    @store = YAML::Store.new('movie.yml')
   end
 
   def save(movie)
     store.transaction do
       unless movie.id
-        highest_id = store.roots.max || 0
-        movie.id = highest_id + 1
+        movie.id = store.roots.size + 1
+        store[next_id] = movie
       end
-      store[movie.id] = movie
     end
   end
 
   def all
     store.transaction do
-      store.roots.map{ |id| @store[id] }
+      store.roots.map { |id| store[id] }
     end
   end
 
