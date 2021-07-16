@@ -12,7 +12,7 @@ class MovieStore
     store.transaction do
       unless movie.id
         movie.id = store.roots.size + 1
-        store[next_id] = movie
+        store[movie.id] = movie
       end
     end
   end

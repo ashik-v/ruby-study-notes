@@ -1,6 +1,6 @@
 #!/bin/bash
 
-trap "echo Exited!; exit;" SIGINT SIGTERM
+trap "echo Exited!; pkill -9 -f ruby.app.rb; exit;" SIGINT SIGTERM
 
 while true; do
   ag -g '\.rb$' | entr -c -d -p -s 'pkill -9 -f ruby.app.rb; ruby app.rb &'
